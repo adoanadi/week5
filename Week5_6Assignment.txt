@@ -1,0 +1,20 @@
+Be sure to include comments with the code you write for each of these!
+
+(1) Write a script that uses a for loop to read a series of integers from the command line. The script should both (a) count the number of values less than 10 and (b) add all the numbers together. Both values should be printed to the screen.
+
+#!/bin/bash
+
+sum=0
+for ((i=1;i<10;i++))
+do ((sum += i))
+	echo $i
+	echo $sum
+done
+
+(2) Write a script that does the same thing as (1), but reads the values from a file.
+read file
+cat $file | ./Week5_6Assignment.sh
+
+(3) Write a script that reads in two columns of numbers from a file. The columns are separated by a tab. Have it output any lines where the first column contains a number greater than 10 and the second column contains a number less than 10. HINT: there are multiple ways to do this.
+read file
+cat $file | awk '{ print $1>10, $2<10 }'
